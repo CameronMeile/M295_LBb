@@ -36,20 +36,20 @@ router.post('/login', (req, res) => {
    #swagger.tags = ['login']
    #swagger.summary = 'Login und generiert AUTH-Token'
    #swagger.responses[200] = {
-       schema: { $ref: '#/definitions/login' }
+       schema: { $ref: '#/definitions/login_success' }
    }  
-   #swagger.responses[404] = {
-       schema: { $ref: '#/definitions/login' }
+   #swagger.responses[401] = {
+       schema: { $ref: '#/definitions/login_invalid' }
    }  
-
-       #swagger.parameters['body'] = {
-           in: 'body',
-           description: 'User data.',
-           required: true,
-           schema: {
+   #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'User data.',
+            required: true,
+            schema: {
                 "email": "example@example.com",
                 "password": "m295"
-           }
+            }
+        }
    */
 });
 
@@ -69,19 +69,12 @@ router.get('/verify', (req, res) => {
     #swagger.tags = ['login']
     #swagger.summary = 'Prüft den AUTH-Token'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/verify_success' }
     }  
     #swagger.responses[401] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/verify_failed' }
     }  
-
-        #swagger.parameters['token'] = {
-            in: 'body',
-            description: 'Token.',
-            required: true,
-            type: 'string'
-        }
-    */
+*/
 });
 
 // DELETE /logout Endpunkt, welcher das mitgegeben Token oder Cookie als ungültig markiert
@@ -100,10 +93,10 @@ router.delete('/logout', (req, res) => {
     #swagger.tags = ['login']
     #swagger.summary = 'Login und generiert AUTH-Token'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/logout_sucess' }
     }  
     #swagger.responses[500] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/login_failed' }
     }  
     */
 });
