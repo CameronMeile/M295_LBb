@@ -31,24 +31,26 @@ router.post('/login', (req, res) => {
         // Invalid credentials
         res.status(401).json({ error: 'Invalid credentials' });
     }
-     /*
-    #swagger.consumes = ['application/json']
-    #swagger.tags = ['login']
-    #swagger.summary = 'Login und generiert AUTH-Token'
-    #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/someSchema' }
-    }  
-    #swagger.responses[404] = {
-        schema: { $ref: '#/definitions/someSchema' }
-    }  
+    /*
+   #swagger.consumes = ['application/json']
+   #swagger.tags = ['login']
+   #swagger.summary = 'Login und generiert AUTH-Token'
+   #swagger.responses[200] = {
+       schema: { $ref: '#/definitions/login' }
+   }  
+   #swagger.responses[404] = {
+       schema: { $ref: '#/definitions/login' }
+   }  
 
-        #swagger.parameters['id'] = {
-            in: 'path',
-            description: 'Task ID.',
-            required: true,
-            type: 'string'
-        }
-    */
+       #swagger.parameters['body'] = {
+           in: 'body',
+           description: 'User data.',
+           required: true,
+           schema: {
+                "email": "example@example.com",
+                "password": "m295"
+           }
+   */
 });
 
 //  GET /verify Endpunkt, welcher ein Token oder Cookie auf Gültigkeit überprüft und das Ergebnis zurück gibt
@@ -61,6 +63,25 @@ router.get('/verify', (req, res) => {
         // User is not authenticated
         res.status(401).json({ valid: false });
     }
+
+    /*
+    #swagger.consumes = ['application/json']
+    #swagger.tags = ['login']
+    #swagger.summary = 'Prüft den AUTH-Token'
+    #swagger.responses[200] = {
+        schema: { $ref: '#/definitions/login' }
+    }  
+    #swagger.responses[401] = {
+        schema: { $ref: '#/definitions/login' }
+    }  
+
+        #swagger.parameters['token'] = {
+            in: 'body',
+            description: 'Token.',
+            required: true,
+            type: 'string'
+        }
+    */
 });
 
 // DELETE /logout Endpunkt, welcher das mitgegeben Token oder Cookie als ungültig markiert
@@ -74,6 +95,17 @@ router.delete('/logout', (req, res) => {
             res.status(200).json({ message: 'Logout successful' });
         }
     });
+    /*
+    #swagger.consumes = ['application/json']
+    #swagger.tags = ['login']
+    #swagger.summary = 'Login und generiert AUTH-Token'
+    #swagger.responses[200] = {
+        schema: { $ref: '#/definitions/login' }
+    }  
+    #swagger.responses[500] = {
+        schema: { $ref: '#/definitions/login' }
+    }  
+    */
 });
 
 module.exports = router;
