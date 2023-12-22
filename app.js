@@ -91,6 +91,19 @@ app.get('/verify', (req, res) => {
     }
 });
 
+// DELETE /logout Endpunkt, welcher das mitgegeben Token oder Cookie als ungültig markiert
+app.delete('/logout', (req, res) => {
+    // Destroy the session to log the user out
+    req.session.destroy((error) => {
+        if (error) {
+            console.error('Error destroying session:', error);
+            res.status(500).json({ error: 'An error occurred during logout' });
+        } else {
+            res.status(200).json({ message: 'Logout successful' });
+        }
+    });
+});
+
 // Server Listens on PORT:3000
 app.listen(port, () => {
     console.log('Server is running on port 3000');
