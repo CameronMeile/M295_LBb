@@ -1,0 +1,174 @@
+commit 47d1c00114f0292463703333dbfa72129a0a5193
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:39:30 2023 +0100
+
+    chore: Linting (Coderichtlinien) Updated
+
+commit 38b468dad747cc0ae9363c02e6b0b7f5976e7c2a
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:33:20 2023 +0100
+
+    chore: SETUP README udated
+
+commit 3617ad82b609f77c893927d756892341c3948594
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:32:46 2023 +0100
+
+    chore: application moved into src folder
+
+commit 0c72749f827906074947e87bb35ff39a82c7cd8f
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:22:22 2023 +0100
+
+    chore: swagger-output-json Added
+
+commit ee691f03cdc5be962be95a839975e3ecca6e12de
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:20:56 2023 +0100
+
+    fix: big $ref & parameters change
+
+commit 18f75672f90c94f747661ae219fc7286f01da22d
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:20:32 2023 +0100
+
+    chore: Manual for Testing Added
+
+commit 0785d3105db86b8c37e8de9e5ba1799bde582493
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 13:26:53 2023 +0100
+
+    fix: $ref corrected
+
+commit 33b6d3667ca0a27f8a0bd4c4dbcf79e55ada6f87
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 13:21:21 2023 +0100
+
+    fix: Swagger $ref Tags updated
+
+commit 064e67de699cc572e51a7144ebf593aaf002a4da
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 13:18:00 2023 +0100
+
+    chore: swagger.js Added
+
+commit a224de41dfdc01768fd7c1e1020148c6a3dcc94f
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 13:03:49 2023 +0100
+
+    chore: Added Swagger Tags
+
+commit 9c9813910ab878c681a038598720442e8f41d275
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 13:03:33 2023 +0100
+
+    chore: Added Swagger Tags
+    fix: Author added to POST
+
+commit 60c5132d52ef4ec205023211dfc1f0782fc268f6
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 12:44:14 2023 +0100
+
+    chore: Added swagger.js Docu-generator
+
+commit 284e01aa1afebb96fe8338228a6d557e47a12db9
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 12:43:35 2023 +0100
+
+    chore: Loing outsourced into routes
+
+commit fbd601dbe5aafecf282b3ae56f7d15ba668a5ecd
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 11:45:44 2023 +0100
+
+    chore: Swagger & Login Outsourced
+
+commit cd5a52efc5efee8f7d287989d5909d38bf9dd678
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:40:50 2023 +0100
+
+    chore: README Updated | Redirections to folders Added
+
+commit a36474cd160932862d3ef8da529f34063301feba
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:39:49 2023 +0100
+
+    chore: testing folder added + README & testing.json
+
+commit 329493f7b11c9951dac933cc110f63c374847835
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:29:48 2023 +0100
+
+    chore: Linting (Coderichtlinien) Added
+
+commit e70d1adc817a049725a5bc890c39543d77f83e47
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:29:13 2023 +0100
+
+    chore: Middleware Function verifying authentication Added
+
+commit 73785cd5219ee7e6d0d5b64d271ff1b982954283
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:28:27 2023 +0100
+
+    chore: Error handling middleware (500) added
+
+commit b2530d6544bd00daedf718d473678030ca34e0b0
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:21:52 2023 +0100
+
+    chore: Dependencies to Install README.md Added
+
+commit 1f36b520694033e8c696036629499f515fc844d9
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:16:22 2023 +0100
+
+    chore: middleware 404 handling added
+
+commit ca1ccb6081a3d9e7d85f0b5895d237019f248f24
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 10:13:29 2023 +0100
+
+    chore: logging middleware added
+
+commit fb47c8f36dba22b740311ff1d69054ddd3dcecbb
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:55:58 2023 +0100
+
+    chore: DELETE /logout added
+
+commit f51200f6a7c64cde93f74bd7425451a1b84a1b17
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:50:36 2023 +0100
+
+    chore: missing comments added
+
+commit c8cdadce122e46c3c098fbe0e6665722298be4bf
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:49:26 2023 +0100
+
+    chore: GET /verify added
+
+commit 59bb439c0593686dc1e5151a15befcd43d26c4de
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:48:28 2023 +0100
+
+    chore: /login updated / new logic
+
+commit b26a2c7107d0db5344e1bb616dc7227ea07601ad
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:22:25 2023 +0100
+
+    chore: .gitignore added
+
+commit be3a24f0cacfb14eb26bc5f018f63e4d637478f4
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:21:53 2023 +0100
+
+    chore: app.js added + connect with routes + swaggerJS
+
+commit c335aae75fe45fc49c6dd34fea3704a35a945e21
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 09:20:15 2023 +0100
+
+    chore: added folder routes + tasks.js
