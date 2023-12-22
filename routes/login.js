@@ -36,10 +36,10 @@ router.post('/login', (req, res) => {
    #swagger.tags = ['login']
    #swagger.summary = 'Login und generiert AUTH-Token'
    #swagger.responses[200] = {
-       schema: { $ref: '#/definitions/login' }
+       schema: { $ref: '#/definitions/login200' }
    }  
    #swagger.responses[404] = {
-       schema: { $ref: '#/definitions/login' }
+       schema: { $ref: '#/definitions/login404' }
    }  
 
        #swagger.parameters['body'] = {
@@ -69,10 +69,10 @@ router.get('/verify', (req, res) => {
     #swagger.tags = ['login']
     #swagger.summary = 'Prüft den AUTH-Token'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/login200' }
     }  
     #swagger.responses[401] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/login401' }
     }  
 
         #swagger.parameters['token'] = {
@@ -100,10 +100,10 @@ router.delete('/logout', (req, res) => {
     #swagger.tags = ['login']
     #swagger.summary = 'Login und generiert AUTH-Token'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/login200' }
     }  
     #swagger.responses[500] = {
-        schema: { $ref: '#/definitions/login' }
+        schema: { $ref: '#/definitions/login500' }
     }  
     */
 });
