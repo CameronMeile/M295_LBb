@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const swaggerUI = require('swagger-ui-express');
-const swaggerDocument = require('./docs/swagger-output.json');
+const swaggerDocument = require('../docs/swagger-output.json');
 const { randomUUID } = require('node:crypto');
 const app = express();
 const port = 3000;
