@@ -37,40 +37,48 @@ const doc = {
                     format: 'date-time'
                 }
             }
+        },
+        login: {
+            type: 'object',
+            properties: {
+                token: {
+                    type: 'string'
+                }
+            }
         }
     },
     responses: {
         200: {
             description: 'Successful response',
             schema: {
-                $ref: '#/definitions/tasks200',
-                $ref: '#/definitions/login200'
+                $ref: '#/definitions/tasks',
+                $ref: '#/definitions/login'
             }
         },
         201: {
             description: 'Successful Created',
             schema: {
-                $ref: '#/definitions/tasks201',
-                $ref: '#/definitions/login201'
+                $ref: '#/definitions/tasks',
+                $ref: '#/definitions/login'
             }
         },
         401: {
             description: 'Unauthorized',
             schema: {
-                $ref: '#/definitions/login401'
+                $ref: '#/definitions/login'
             }
         },
         404: {
             description: 'Task not Found',
             schema: {
-                $ref: '#/definitions/tasks404',
-                $ref: '#/definitions/login404'
+                $ref: '#/definitions/tasks',
+                $ref: '#/definitions/login'
             }
         },
         500: {
             description: 'An error occurred during logout',
             schema: {
-                $ref: '#/definitions/login500'
+                $ref: '#/definitions/login'
             }
         }
     }

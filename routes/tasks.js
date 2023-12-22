@@ -93,7 +93,7 @@ router.get('/', (req, res) => {
     #swagger.tags = ['tasks']
     #swagger.summary = 'Eine Liste aller Tasks wird zurück gegeben.'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/tasks200' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
     */
 });
@@ -115,7 +115,7 @@ router.post('/', (req, res) => {
     #swagger.tags = ['tasks']
     #swagger.summary = 'Mit einem JSON POST Request, eine neue Task hinzufügen. '
     #swagger.responses[201] = {
-        schema: { $ref: '#/definitions/tasks201' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
 
         #swagger.parameters['body'] = {
@@ -146,10 +146,10 @@ router.get('/:id', (req, res) => {
     #swagger.tags = ['tasks']
     #swagger.summary = 'Eine bestehende Task via {id} ausgeben.'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/tasks200' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
     #swagger.responses[404] = {
-        schema: { $ref: '#/definitions/tasks404' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
 
         #swagger.parameters['id'] = {
@@ -193,10 +193,10 @@ router.patch('/:id', (req, res) => {
     #swagger.tags = ['tasks']
     #swagger.summary = 'Mit einem JSON PATCH Request, ein bestehende Task via {id} bearbeiten.'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/tasks200' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
     #swagger.responses[404] = {
-        schema: { $ref: '#/definitions/tasks404' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
 
         #swagger.parameters['id'] = {
@@ -237,10 +237,10 @@ router.delete('/:id', (req, res) => {
     #swagger.tags = ['tasks']
     #swagger.summary = 'Mit der {id} eine bestehende Task löschen.'
     #swagger.responses[200] = {
-        schema: { $ref: '#/definitions/tasks200' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
     #swagger.responses[404] = {
-        schema: { $ref: '#/definitions/tasks404' }
+        schema: { $ref: '#/definitions/tasks' }
     }  
 
         #swagger.parameters['id'] = {
