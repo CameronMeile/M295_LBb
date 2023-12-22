@@ -1,0 +1,481 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "LBb Taskmanager - Cameron Meile",
+    "description": "This is LBb! A Taskmanager. You can get all your tasks, edit it and delete it. But first you need to login!"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "Login und generiert AUTH-Token",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User data.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "m295"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/login_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/login_invalid"
+            }
+          }
+        }
+      }
+    },
+    "/verify": {
+      "get": {
+        "tags": [
+          "login"
+        ],
+        "summary": "Prüft den AUTH-Token",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/verify_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/verify_failed"
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "delete": {
+        "tags": [
+          "login"
+        ],
+        "summary": "Login und generiert AUTH-Token",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/logout_sucess"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/login_failed"
+            }
+          }
+        }
+      }
+    },
+    "/tasks": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Eine Liste aller Tasks wird zurück gegeben.",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/tasks_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/unauthorized"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Mit einem JSON POST Request, eine neue Task hinzufügen. ",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User data.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "New Title"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/tasks_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/unauthorized"
+            }
+          }
+        }
+      }
+    },
+    "/tasks/{id}": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Eine bestehende Task via {id} ausgeben.",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Task ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/tasks_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/unauthorized"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/tasksnotfound"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Mit einem JSON PATCH Request, ein bestehende Task via {id} bearbeiten.",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Task ID."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User data.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Changed Title"
+                },
+                "erstellungsdatum": {
+                  "type": "string",
+                  "example": "2023-12-22T10:30:00.000Z"
+                },
+                "erfüllungsdatum": {
+                  "type": "string",
+                  "example": "2023-12-31T23:59:59.000Z"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/tasks_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/unauthorized"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/tasksnotfound"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Mit der {id} eine bestehende Task löschen.",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Task ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/tasks_success"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/unauthorized"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/tasksnotfound"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "tasks_success": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "example": "object"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "example": "RandomUuid();"
+            },
+            "title": {
+              "type": "string",
+              "example": "Task_Title"
+            },
+            "author": {
+              "type": "string",
+              "example": "Token"
+            },
+            "erstellungsdatum": {
+              "type": "string",
+              "example": "date();"
+            },
+            "erfüllungsdatum": {
+              "type": "string",
+              "example": "null"
+            }
+          }
+        }
+      }
+    },
+    "tasksnotfound": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "example": "Task not found"
+        }
+      }
+    },
+    "login_success": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "example": "RandomUuid();"
+        }
+      }
+    },
+    "login_failed": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "example": "Internal Server Error"
+        }
+      }
+    },
+    "login_invalid": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "example": "Invalid credentials"
+        }
+      }
+    },
+    "verify_success": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "verify_failed": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "example": false
+        }
+      }
+    },
+    "logout_sucess": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "Logout successful"
+        }
+      }
+    },
+    "unauthorized": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "example": "Unauthorized"
+        }
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "description": "Successful response",
+      "schema": {
+        "$ref": "#/definitions/verify_success"
+      }
+    },
+    "201": {
+      "description": "Successful Created",
+      "schema": {
+        "$ref": "#/definitions/login_success"
+      }
+    },
+    "401": {
+      "description": "Unauthorized",
+      "schema": {
+        "$ref": "#/definitions/verify_failed"
+      }
+    },
+    "404": {
+      "description": "Task not Found",
+      "schema": {
+        "$ref": "#/definitions/tasksnotfound"
+      }
+    },
+    "500": {
+      "description": "An error occurred during logout",
+      "schema": {
+        "$ref": "#/definitions/login_failed"
+      }
+    }
+  }
+}
