@@ -1,3 +1,21 @@
+commit 112ef180b54a68330511d43120ff548d98b7f161
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 15:02:03 2023 +0100
+
+    chore: createed fix exampel tasks
+
+commit 4711b4aad5d43ab4a291ce77fe87536d8c1d5d86
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 15:01:45 2023 +0100
+
+    chore: testing.json updated for fix array
+
+commit 25165f6b8f14a670d66af98bb3f0f1817a8acaf5
+Author: Cam <112639963+CameronMeile@users.noreply.github.com>
+Date:   Fri Dec 22 14:44:50 2023 +0100
+
+    chore: Git Logs Added
+
 commit 47d1c00114f0292463703333dbfa72129a0a5193
 Author: Cam <112639963+CameronMeile@users.noreply.github.com>
 Date:   Fri Dec 22 14:39:30 2023 +0100
