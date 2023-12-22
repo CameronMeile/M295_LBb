@@ -11,17 +11,72 @@ const doc = {
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],
-    tags: [                   // by default: empty Array
+    tags: [
         {
         },
     ],
-    securityDefinitions: {},  // by default: empty object
     definitions: {
-        
-    },          // by default: empty object
+        tasks: {
+            type: 'object',
+            properties: {
+                id: {
+                    type: 'string'
+                },
+                title: {
+                    type: 'string'
+                },
+                author: {
+                    type: 'string'
+                },
+                erstellungsdatum: {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                erfüllungsdatum: {
+                    type: 'string',
+                    format: 'date-time'
+                }
+            }
+        }
+    },
+    responses: {
+        200: {
+            description: 'Successful response',
+            schema: {
+                $ref: '#/definitions/tasks200',
+                $ref: '#/definitions/login200'
+            }
+        },
+        201: {
+            description: 'Successful Created',
+            schema: {
+                $ref: '#/definitions/tasks201',
+                $ref: '#/definitions/login201'
+            }
+        },
+        401: {
+            description: 'Unauthorized',
+            schema: {
+                $ref: '#/definitions/login401'
+            }
+        },
+        404: {
+            description: 'Task not Found',
+            schema: {
+                $ref: '#/definitions/tasks404',
+                $ref: '#/definitions/login404'
+            }
+        },
+        500: {
+            description: 'An error occurred during logout',
+            schema: {
+                $ref: '#/definitions/login500'
+            }
+        }
+    }
 };
 
 const outputFile = './docs/swagger-output.json';
-const routes = ['./routes/login.js','./routes/tasks.js'];
+const routes = ['./routes/login.js', './routes/tasks.js'];
 
 swaggerAutogen(outputFile, routes, doc);
