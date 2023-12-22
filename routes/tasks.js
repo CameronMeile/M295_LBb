@@ -73,8 +73,6 @@ let tasks = [
     }
 ]
 
-// ENDPUNKTE
-
 // GET /tasks Endpunkt, welcher eine Liste aller Tasks zurück gibt
 router.get('/', (req, res) => {
     res.status(200).json(tasks);
@@ -110,6 +108,7 @@ router.get('/:id', (req, res) => {
     return res.status(200).json(task);
 });
 
+// PATCH /task/{id} Endpunkt, welcher den bestehenden Task verändert und diesen zurück gibt
 router.patch('/:id', (req, res) => {
     const taskId = req.params.id;
     const { title, erstellungsdatum, erfüllungsdatum } = req.body;
@@ -133,6 +132,7 @@ router.patch('/:id', (req, res) => {
 // "erfüllungsdatum": "2023-12-31T23:59:59.000Z"
 // }
 
+// DELETE /task/{id} Endpunkt, welcher den bestehenden Task löscht
 router.delete('/:id', (req, res) => {
     const taskId = req.params.id;
     const taskIndex = tasks.findIndex(task => task.id === taskId);
