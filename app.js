@@ -113,6 +113,11 @@ app.delete('/logout', (req, res) => {
     });
 });
 
+// Handle requests to non-existent endpoints
+app.use((req, res) => {
+    res.status(404).json({ error: 'Endpoint not found' });
+});
+
 // Server Listens on PORT:3000
 app.listen(port, () => {
     console.log('Server is running on port 3000');
