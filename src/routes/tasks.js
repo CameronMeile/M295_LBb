@@ -21,6 +21,12 @@ router.use(session({
 
 let tasks = [
     {
+        "id": "1",
+        "title": "TestExample",
+        "erstellungsdatum": new Date().toISOString(),
+        "erfüllungsdatum": null
+    },
+    {
         "id": randomUUID(),
         "title": "Bericht zu Ende schreiben",
         "erstellungsdatum": new Date().toISOString(),
