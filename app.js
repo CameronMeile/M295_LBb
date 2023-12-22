@@ -79,6 +79,18 @@ app.post('/login', (req, res) => {
     }
 });
 
+//  GET /verify Endpunkt, welcher ein Token oder Cookie auf Gültigkeit überprüft und das Ergebnis zurück gibt
+app.get('/verify', (req, res) => {
+    // Check if the user is authenticated in the session
+    if (req.session.isAuthenticated === true) {
+        // User is authenticated
+        res.status(200).json({ valid: true });
+    } else {
+        // User is not authenticated
+        res.status(401).json({ valid: false });
+    }
+});
+
 // Server Listens on PORT:3000
 app.listen(port, () => {
     console.log('Server is running on port 3000');
