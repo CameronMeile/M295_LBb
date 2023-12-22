@@ -1,12 +1,14 @@
 # SetUp Guide
 
-1. 
+1. Erstellen Sie eine Kopie (fork) von diesem Projekt.
+2. Stellen Sie sicher, dass Docker installiert ist und läuft.
+3. Erstellen Sie einen Dev Container, um dieses Projket zu runnen.
+
+4. Führen Sie folgende Schritte aus, nachdem Ihr Container gestartet hat.
 ```
 npm init
 ```
-
-2. 
-### Dependencies to Install
+5. Dependencies to Install
 - npm i express
 - npm i express-session
 - npm i swagger-ui-express
@@ -19,7 +21,7 @@ npm init
 npm i express express-session swagger-ui-express swagger-autogen crypto nodemon
 ```
 
-3. Go into your package.json and replace the script section with this code
+6. Go into your package.json and replace the script section with this code
 ```json
 "scripts": {
     "dev": "nodemon ./src/app.js",
@@ -27,12 +29,12 @@ npm i express express-session swagger-ui-express swagger-autogen crypto nodemon
   },
 ```
 
-4. Run your application
+7. Run your application
 ```
 npm run dev
 ```
 
-5. (optinal) before running the application, you can reload the docu for a up to date version
+8. (optinal) before running the application, you can reload the docu for a up to date version
 ```
 npm run swagger
 ```
