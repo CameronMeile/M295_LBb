@@ -113,9 +113,20 @@ app.delete('/logout', (req, res) => {
     });
 });
 
+app.get('/500', (req, res, next) => {
+    // Simulating an error by throwing an exception
+    throw new Error('Something went wrong');
+  });
+
 // Handle requests to non-existent endpoints
 app.use((req, res) => {
     res.status(404).json({ error: 'Endpoint not found' });
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Unhandled Error:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
 });
 
 // Server Listens on PORT:3000
