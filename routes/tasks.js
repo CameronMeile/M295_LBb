@@ -3,6 +3,15 @@ const session = require('express-session');
 const { randomUUID } = require('node:crypto');
 const router = express.Router();
 
+// Middleware function for verifying authentication
+function verifyAuthentication(req, res, next) {
+    if (req.session.isAuthenticated === true) {
+        next();
+    } else {
+        res.status(401).json({ error: 'Unauthorized' });
+    }
+}
+
 router.use(express.json());
 router.use(session({
     secret: 'supersecret',
@@ -73,13 +82,15 @@ let tasks = [
     }
 ]
 
+router.use(verifyAuthentication);
+
 // GET /tasks Endpunkt, welcher eine Liste aller Tasks zurück gibt
 router.get('/', (req, res) => {
     res.status(200).json(tasks);
 });
 
 // POST /tasks Endpunkt, der einen neuen Task erstellt und diesen zurückgibt
-router.post('/', (req, res) => {    
+router.post('/', (req, res) => {
 
     const newTask = req.body;
     newTask.id = randomUUID();
