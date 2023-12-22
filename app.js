@@ -47,14 +47,23 @@ const { randomUUID } = require('node:crypto');
 //   res.sendFile('/swagger-output.json');
 // });
 
-const tasksRouter = require('./routes/tasks');
-app.use('/tasks', tasksRouter);
+// Session middleware
 
 app.use(session({
     secret: 'supersecret',
     resave: false,
     saveUninitialized: true
 }));
+
+// Logging middleware
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+    next();
+});
+
+// The tasks router module
+const tasksRouter = require('./routes/tasks');
+app.use('/tasks', tasksRouter);
 
 // POST /login Endpunkt, welcher die Credentials entgegennimmt, überprüft und ein Token oder Cookie zurück gibt
 app.post('/login', (req, res) => {
